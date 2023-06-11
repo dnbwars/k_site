@@ -17,20 +17,25 @@
 }
 
 body {
-    display: grid;
-    justify-items: center;
     background-color: #0E1117;
     font-family: "AvertaKyivstar-Regular";
     font-size: var(--text_size);
     color: #ffff;
 }
-.container {
-    /* padding: 112px; */
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--max-width);
+    width: calc(100% - var(--side_offset) * 2);
+}
+/* .container {
+    padding: 112px;
     display: grid;
-    /* max-width: 1440px; */
+    max-width: 1440px;
     justify-items: center;
     width: 100%;
-}
+} */
 
 .main_head {
     display: flex;
@@ -51,10 +56,6 @@ body {
 .head_container{ 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-left: auto;
-    margin-right: auto;
-    max-width: var(--max-width);
-    width: calc(100% - var(--side_offset) * 2);
 }
 .head { 
     margin-top: 96px;
@@ -94,8 +95,6 @@ body {
     grid-template-columns: repeat(2, 1fr);
     justify-items: left;
     margin-top: var(--section_margin);
-    max-width: var(--max-width);
-    width: calc(100% - var(--side_offset) * 2);
     }
     
 .stats_dots {
@@ -150,9 +149,8 @@ body {
 
 .progress {
     display: grid;
-    max-width: var(--max-width);
-    width: calc(100% - var(--side_offset) * 2);
     margin-top: var(--section_margin);
+
 }
 
 .progress_items {
@@ -221,25 +219,23 @@ body {
     align-items: center;
 }
 
-.reverese {
+.products_item:nth-child(odd) .item_description{
     grid-column: 2;
-    height: 176px;
-    padding: 128px 0;
-
+    grid-row: 1;
 }
 
-.reverese_right {
-    grid-column: 1;
-    grid-row: 1;
+.item_description h3 {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin: 0 0 1.5rem;
 }
 
 .item_left h3 {
     margin: 0 0 1.5rem;
 }
 
-.item_right {
-    display: flex;
-    justify-content: center;
+.item_image {
+    text-align: center;
 }
 
 /* mobile */
