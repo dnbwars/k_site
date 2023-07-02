@@ -8,12 +8,14 @@
     --section_margin: 160px;
     --side_offset: 100px;
     --text_size: 1.125rem;
+    --head_title: 2.5rem;
+    --line-height: 1.55;
 }
 
 @font-face {
     font-family: "AvertaKyivstar-Regular";
     src: local("AvertaKyivstar-Regular"),
-    url(C:/Users/38067/Desktop/ks.tech/fonts/AvertaKyivstar-Regular.woff)
+    url(/fonts/AvertaKyivstar-Regular.woff)
 }
 
 body {
@@ -21,6 +23,7 @@ body {
     font-family: "AvertaKyivstar-Regular";
     font-size: var(--text_size);
     color: #ffff;
+    line-height: var(--line-height);
 }
 
 .center {
@@ -66,7 +69,7 @@ body {
 }
 
 .head_title h1 {
-    font-size: 48px;
+    font-size: var(--head_title);
     line-height: 56px;
     font-weight: 700;
 }
@@ -185,10 +188,6 @@ body {
 .products {
     display: grid;
     margin-top: var(--section_margin);
-    max-width: var(--max-width);
-    width: calc(100% - var(--side_offset) * 2);
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .products_head {
@@ -240,11 +239,44 @@ body {
 
 /* mobile */
 
-@media (max-width: 960px) {
-    .stats_dots {
-        /* grid-template-columns: repeat(1, 1fr); */
-    }
 
+.about {
+    margin-top: var(--section_margin);
+    background: url('/media/Group\ 3935.png') no-repeat left center;
+}
+
+.about .center {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px;
+}
+
+.about_head {
+   font-size: var(--head_title);
+   line-height: 1.16;
+   margin: 0 0 var();
+}
+
+.list {
+    padding: 16px 0;
+    list-style: none;
+}
+
+.list_item {
+    padding-bottom: 24px;
+}
+
+.list_item + .list_item {
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 800px) {
+
+    :root {
+        --head_title: 1.5rem;
+        --side_offset: 50px;
+    }
     .stats_title {
         width: fit-content;
     }
@@ -254,7 +286,6 @@ body {
         line-height: 40px;
     }
 
-
     .progress {
         width: fit-content;
         height: fit-content;
@@ -262,15 +293,34 @@ body {
 
     .progress_items {
         grid-template-columns: repeat(1, 1fr);
-  }  
+    }  
+
+    .about .center {
+        grid-template-columns: 1fr;
+    }  
+    
+    .about {
+        background-position-y: top;
+        padding-top: 160px;
+        background-size: 132px;
+    }
 }
 
+@media (max-width: 500px) {
 
+    :root {
+        --head_title: 2rem;
+        --side_offset: 20px;
+    }
 
+    .center {
+         grid-gap: 0;
+    }
 
-
-
-
+    .head_title {
+        margin-bottom: 2rem;
+    }
+}
 
 
 /* .stats_title::before {
